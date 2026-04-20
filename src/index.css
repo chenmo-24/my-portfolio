@@ -356,6 +356,8 @@ button {
 .hero-terminal-wrap {
   width: 100%;
   max-width: 42rem;
+  min-width: 0;
+  overflow: hidden;
   margin-inline: auto;
 }
 
@@ -366,6 +368,7 @@ button {
 }
 
 .terminal-shell {
+  min-width: 0;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background:
     linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.96)),
@@ -384,12 +387,12 @@ button {
 
 .terminal-code {
   height: 24rem;
-  overflow-y: hidden;
-  @apply overflow-x-auto px-5 py-5 font-mono text-sm leading-7 text-slate-100;
+  overflow: hidden;
+  @apply px-5 py-5 font-mono text-sm leading-7 text-slate-100;
 }
 
 .terminal-line {
-  @apply block whitespace-pre text-slate-300;
+  @apply block whitespace-pre-wrap break-all text-slate-300;
 }
 
 .terminal-line-command {
