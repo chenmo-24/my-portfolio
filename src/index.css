@@ -247,6 +247,7 @@ button {
 .hero-scene {
   position: relative;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(2rem, 4vw, 3rem);
 }
 
@@ -419,6 +420,8 @@ button {
 }
 
 .terminal-statusbar {
+  height: 3.5rem;
+  overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   @apply flex items-center justify-between gap-4 bg-white/[0.04] px-5 py-3;
 }
@@ -454,6 +457,8 @@ button {
 }
 
 .terminal-loglist {
+  height: 5.5rem;
+  overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   @apply space-y-2 bg-slate-950/40 px-5 py-4;
 }
@@ -472,10 +477,6 @@ button {
 
 .terminal-logtext-ok {
   @apply text-emerald-300;
-}
-
-.terminal-loglist {
-  min-height: 5.5rem;
 }
 
 .hero-scrollcue {
@@ -629,6 +630,7 @@ button {
   }
 
   .terminal-statusbar {
+    height: 5rem;
     flex-direction: column;
     align-items: stretch;
   }
@@ -640,6 +642,10 @@ button {
   .terminal-logrow {
     flex-wrap: wrap;
     gap: 0.35rem 0.75rem;
+  }
+
+  .terminal-loglist {
+    height: 7rem;
   }
 
   .hero-scrollcue-label {
