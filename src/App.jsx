@@ -6,6 +6,8 @@ import Projects from "./components/Projects";
 import FunZone from "./components/FunZone";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import CommandPalette from "./components/CommandPalette";
+import KonamiEasterEgg from "./components/KonamiEasterEgg";
 import { personalInfo } from "./data/personalInfo";
 import projects from "./data/projects";
 import quotes from "./data/quotes";
@@ -112,6 +114,15 @@ function App() {
       </main>
 
       <Footer language={language} tagline={personalInfo.footerTagline[language]} />
+
+      <CommandPalette
+        language={language}
+        theme={theme}
+        toggleTheme={toggleTheme}
+        toggleLanguage={toggleLanguage}
+      />
+
+      <KonamiEasterEgg language={language} />
     </div>
   );
 }

@@ -181,24 +181,24 @@ function SnakeGame({ language }) {
 
       <div className="grid gap-6 lg:grid-cols-[1fr_18rem]">
         <div className="glass-panel relative p-3 sm:p-4 md:p-5">
-          <div className="mb-4 grid grid-cols-3 gap-2 sm:gap-3">
-            <div className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 px-2 py-2 sm:px-4 sm:py-3">
-              <p className="text-xs sm:text-sm uppercase tracking-wider sm:tracking-[0.28em] text-slate-500 dark:text-slate-400">Score</p>
-              <p className="mt-1 sm:mt-2 text-xl sm:text-3xl font-bold text-slate-900 dark:text-white">{g.score}</p>
+          <div className="mb-3 grid grid-cols-3 gap-2 sm:mb-4 sm:gap-3">
+            <div className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 px-2 py-1.5 sm:px-4 sm:py-3">
+              <p className="text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-[0.28em] text-slate-500 dark:text-slate-400">Score</p>
+              <p className="mt-0.5 sm:mt-2 text-lg sm:text-3xl font-bold text-slate-900 dark:text-white">{g.score}</p>
             </div>
             <div
-              className={`rounded-xl sm:rounded-2xl border px-2 py-2 sm:px-4 sm:py-3 transition duration-200 ${
+              className={`rounded-xl sm:rounded-2xl border px-2 py-1.5 sm:px-4 sm:py-3 transition duration-200 ${
                 highlight
                   ? "border-cyan-300/50 bg-cyan-400/15 shadow-[0_0_24px_rgba(34,211,238,0.2)]"
                   : "border-white/10 bg-white/5"
               }`}
             >
-              <p className="text-xs sm:text-sm uppercase tracking-wider sm:tracking-[0.28em] text-slate-500 dark:text-slate-400">Length</p>
-              <p className="mt-1 sm:mt-2 text-xl sm:text-3xl font-bold text-slate-900 dark:text-white">{g.snake.length}</p>
+              <p className="text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-[0.28em] text-slate-500 dark:text-slate-400">Length</p>
+              <p className="mt-0.5 sm:mt-2 text-lg sm:text-3xl font-bold text-slate-900 dark:text-white">{g.snake.length}</p>
             </div>
-            <div className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 px-2 py-2 sm:px-4 sm:py-3">
-              <p className="text-xs sm:text-sm uppercase tracking-wider sm:tracking-[0.28em] text-slate-500 dark:text-slate-400">Status</p>
-              <p className="mt-1 sm:mt-2 text-sm sm:text-lg font-semibold text-slate-900 dark:text-white">
+            <div className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 px-2 py-1.5 sm:px-4 sm:py-3">
+              <p className="text-[10px] sm:text-sm uppercase tracking-wider sm:tracking-[0.28em] text-slate-500 dark:text-slate-400">Status</p>
+              <p className="mt-0.5 sm:mt-2 text-xs sm:text-lg font-semibold text-slate-900 dark:text-white">
                 {g.status === "running"
                   ? language === "zh" ? "进行中" : "Running"
                   : g.status === "over"
@@ -219,6 +219,25 @@ function SnakeGame({ language }) {
               </div>
             )}
           </div>
+
+          <div className="mt-4 space-y-3 lg:hidden">
+            {g.status !== "running" && (
+              <button className="primary-button w-full py-2.5" onClick={start} type="button">
+                {g.status === "over" ? <RotateCcw size={16} /> : <Play size={16} />}
+                {g.status === "over"
+                  ? language === "zh" ? "重新开始" : "Restart"
+                  : language === "zh" ? "开始游戏" : "Start Game"}
+              </button>
+            )}
+            <div className="grid grid-cols-3 gap-2">
+              <span />
+              <button className="secondary-button px-0 py-2" onClick={() => changeDir("ArrowUp")} type="button" aria-label="Up"><ArrowUp size={16} /></button>
+              <span />
+              <button className="secondary-button px-0 py-2" onClick={() => changeDir("ArrowLeft")} type="button" aria-label="Left"><ArrowLeft size={16} /></button>
+              <button className="secondary-button px-0 py-2" onClick={() => changeDir("ArrowDown")} type="button" aria-label="Down"><ArrowDown size={16} /></button>
+              <button className="secondary-button px-0 py-2" onClick={() => changeDir("ArrowRight")} type="button" aria-label="Right"><ArrowRight size={16} /></button>
+            </div>
+          </div>
         </div>
 
         <div className="space-y-5">
@@ -233,7 +252,7 @@ function SnakeGame({ language }) {
             </ul>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="hidden flex-wrap gap-3 lg:flex">
             {g.status !== "running" && (
               <button className="primary-button flex-1" onClick={start} type="button">
                 {g.status === "over" ? <RotateCcw size={16} /> : <Play size={16} />}
@@ -244,7 +263,7 @@ function SnakeGame({ language }) {
             )}
           </div>
 
-          <div className="glass-panel p-5">
+          <div className="glass-panel hidden p-5 lg:block">
             <p className="mb-4 text-sm uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
               {language === "zh" ? "触屏方向键" : "Touch Controls"}
             </p>

@@ -201,7 +201,7 @@ button {
   grid-template-columns: repeat(20, 1fr);
   gap: 1px;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   margin: 0 auto;
 }
 
@@ -387,8 +387,8 @@ button {
 }
 
 .terminal-code {
-  height: 24rem;
-  overflow: hidden;
+  min-height: 24rem;
+  overflow: visible;
   @apply px-5 py-5 font-mono text-sm leading-7 text-slate-100;
 }
 
