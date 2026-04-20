@@ -58,7 +58,7 @@ function App() {
               }
             });
           },
-          { threshold: 0.15, rootMargin: "0px 0px -48px 0px" }
+          { threshold: 0.05, rootMargin: "0px 0px -32px 0px" }
         );
 
     revealElements.forEach((element) => revealObserver?.observe(element));

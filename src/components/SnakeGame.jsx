@@ -171,7 +171,7 @@ function SnakeGame({ language }) {
   }
 
   return (
-    <div className="panel-card overflow-hidden p-8 md:p-10" style={{ contain: "layout style" }}>
+    <div className="panel-card overflow-hidden p-5 sm:p-8 md:p-10">
       <div className="mb-6">
         <p className="section-title mb-2">Module C</p>
         <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
@@ -179,26 +179,26 @@ function SnakeGame({ language }) {
         </h3>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-[1fr_18rem]">
-        <div className="glass-panel relative p-4 md:p-5">
-          <div className="mb-4 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-              <p className="text-sm uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">Score</p>
-              <p className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">{g.score}</p>
+      <div className="grid gap-6 lg:grid-cols-[1fr_18rem]">
+        <div className="glass-panel relative p-3 sm:p-4 md:p-5">
+          <div className="mb-4 grid grid-cols-3 gap-2 sm:gap-3">
+            <div className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 px-2 py-2 sm:px-4 sm:py-3">
+              <p className="text-xs sm:text-sm uppercase tracking-wider sm:tracking-[0.28em] text-slate-500 dark:text-slate-400">Score</p>
+              <p className="mt-1 sm:mt-2 text-xl sm:text-3xl font-bold text-slate-900 dark:text-white">{g.score}</p>
             </div>
             <div
-              className={`rounded-2xl border px-4 py-3 transition duration-200 ${
+              className={`rounded-xl sm:rounded-2xl border px-2 py-2 sm:px-4 sm:py-3 transition duration-200 ${
                 highlight
                   ? "border-cyan-300/50 bg-cyan-400/15 shadow-[0_0_24px_rgba(34,211,238,0.2)]"
                   : "border-white/10 bg-white/5"
               }`}
             >
-              <p className="text-sm uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">Length</p>
-              <p className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">{g.snake.length}</p>
+              <p className="text-xs sm:text-sm uppercase tracking-wider sm:tracking-[0.28em] text-slate-500 dark:text-slate-400">Length</p>
+              <p className="mt-1 sm:mt-2 text-xl sm:text-3xl font-bold text-slate-900 dark:text-white">{g.snake.length}</p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-              <p className="text-sm uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">Status</p>
-              <p className="mt-2 text-lg font-semibold text-slate-900 dark:text-white">
+            <div className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 px-2 py-2 sm:px-4 sm:py-3">
+              <p className="text-xs sm:text-sm uppercase tracking-wider sm:tracking-[0.28em] text-slate-500 dark:text-slate-400">Status</p>
+              <p className="mt-1 sm:mt-2 text-sm sm:text-lg font-semibold text-slate-900 dark:text-white">
                 {g.status === "running"
                   ? language === "zh" ? "进行中" : "Running"
                   : g.status === "over"
@@ -208,10 +208,10 @@ function SnakeGame({ language }) {
             </div>
           </div>
 
-          <div className="relative rounded-3xl border border-white/10 bg-slate-950/80 p-2">
-            <div className="snake-grid w-full">{cells}</div>
+          <div className="relative rounded-xl sm:rounded-3xl border border-white/10 bg-slate-950/80 p-1 sm:p-2">
+            <div className="snake-grid">{cells}</div>
             {g.status === "over" && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center rounded-3xl bg-slate-950/75 text-center">
+              <div className="absolute inset-0 flex flex-col items-center justify-center rounded-xl sm:rounded-3xl bg-slate-950/75 text-center">
                 <p className="text-sm uppercase tracking-[0.32em] text-orange-300">Game Over</p>
                 <p className="mt-3 text-3xl font-bold text-white">
                   {language === "zh" ? `最终得分 ${g.score}` : `Final Score ${g.score}`}

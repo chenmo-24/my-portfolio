@@ -198,14 +198,29 @@ button {
 
 .snake-grid {
   display: grid;
-  grid-template-columns: repeat(20, minmax(0, 1fr));
-  gap: 2px;
-  contain: layout style paint;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 1px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .snake-grid {
+    gap: 2px;
+    max-width: none;
+  }
 }
 
 .snake-cell {
   aspect-ratio: 1 / 1;
-  border-radius: 4px;
+  border-radius: 3px;
+}
+
+@media (min-width: 640px) {
+  .snake-cell {
+    border-radius: 4px;
+  }
 }
 
 .calendar-grid {

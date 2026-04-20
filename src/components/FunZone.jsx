@@ -8,12 +8,10 @@ function FunZone({ language, quotes }) {
   return (
     <section
       className="container-shell py-20 md:py-24"
-      data-reveal
       data-section
       id="fun-zone"
-      style={{ "--reveal-delay": "0.16s" }}
     >
-      <div className="mb-12">
+      <div className="mb-12" data-reveal style={{ "--reveal-delay": "0s" }}>
         <p className="section-title">Fun Zone</p>
         <h2 className="section-heading">
           {language === "zh" ? "有趣但不空的交互区" : "Interactive, but not Empty"}
@@ -26,10 +24,18 @@ function FunZone({ language, quotes }) {
       </div>
 
       <div className="space-y-8">
-        <AlgorithmTracker language={language} progress={algorithmProgress} />
-        <DailyQuote language={language} quotes={quotes} />
-        <CheckinCalendar language={language} />
-        <SnakeGame language={language} />
+        <div data-reveal style={{ "--reveal-delay": "0.05s" }}>
+          <AlgorithmTracker language={language} progress={algorithmProgress} />
+        </div>
+        <div data-reveal style={{ "--reveal-delay": "0.08s" }}>
+          <DailyQuote language={language} quotes={quotes} />
+        </div>
+        <div data-reveal style={{ "--reveal-delay": "0.11s" }}>
+          <CheckinCalendar language={language} />
+        </div>
+        <div data-reveal style={{ "--reveal-delay": "0.14s" }}>
+          <SnakeGame language={language} />
+        </div>
       </div>
     </section>
   );

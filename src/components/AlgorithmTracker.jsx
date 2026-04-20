@@ -35,7 +35,7 @@ function AlgorithmTracker({ language, progress }) {
   const totalPercent = percentage(totalCompleted, totalQuestions);
 
   return (
-    <div className="panel-card overflow-hidden p-8 md:p-10">
+    <div className="panel-card overflow-hidden p-5 sm:p-8 md:p-10">
       <div className="mb-6">
         <p className="section-title mb-2">Module D</p>
         <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
@@ -46,7 +46,7 @@ function AlgorithmTracker({ language, progress }) {
         </p>
       </div>
 
-      <div className="mb-8 grid gap-4 md:grid-cols-3">
+      <div className="mb-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
         <div className="glass-panel p-5">
           <div className="flex items-center gap-3 text-cyan-500">
             <BarChart3 size={18} />
@@ -94,7 +94,7 @@ function AlgorithmTracker({ language, progress }) {
       <div className="grid gap-6 xl:grid-cols-2">
         {progress.tracks.map((track) => (
           <article key={track.title[language]} className="glass-panel p-6">
-            <div className="mb-5 flex items-start justify-between gap-4">
+            <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
               <div>
                 <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
                   {track.title[language]}
