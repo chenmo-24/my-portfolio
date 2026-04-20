@@ -387,8 +387,8 @@ button {
 }
 
 .terminal-code {
-  min-height: 24rem;
-  overflow: visible;
+  height: 24rem;
+  overflow: hidden;
   @apply px-5 py-5 font-mono text-sm leading-7 text-slate-100;
 }
 
@@ -627,6 +627,10 @@ button {
   .terminal-topbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .terminal-code {
+    height: 30rem;
   }
 
   .terminal-statusbar {
