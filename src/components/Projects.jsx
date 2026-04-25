@@ -1,4 +1,5 @@
 import { ArrowUpRight, Github } from "lucide-react";
+import GrowthTimeline from "./GrowthTimeline";
 
 function LinkButton({ href, icon: Icon, children }) {
   if (!href) {
@@ -96,6 +97,8 @@ function Projects({ items, language }) {
           </article>
         ))}
       </div>
+
+      <GrowthTimeline language={language} />
     </section>
   );
 }
