@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import AlgorithmTracker from "./AlgorithmTracker";
 import AchievementPassport from "./AchievementPassport";
+import LearningQuestMap from "./LearningQuestMap";
 import DailyQuote from "./DailyQuote";
 import CheckinCalendar from "./CheckinCalendar";
 import SnakeGame from "./SnakeGame";
@@ -29,6 +30,7 @@ function FunZone({ language, quotes }) {
 
   const modules = [
     { id: "mod-passport", delay: "0.03s", node: <AchievementPassport language={language} /> },
+    { id: "mod-quest-map", delay: "0.04s", node: <LearningQuestMap language={language} /> },
     { id: "mod-algorithm", delay: "0.05s", node: <AlgorithmTracker language={language} progress={algorithmProgress} /> },
     { id: "mod-pathfinder", delay: "0.07s", node: <AlgorithmVisualizer language={language} /> },
     { id: "mod-radar", delay: "0.09s", node: <SkillRadar language={language} data={skillRadarData} /> },
