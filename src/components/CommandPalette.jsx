@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Search, Command, ArrowRight } from "lucide-react";
 import { personalInfo } from "../data/personalInfo";
+import { unlockAchievement } from "../utils/progressStore";
 
 function matches(action, query) {
   if (!query) return true;
@@ -33,6 +34,12 @@ function CommandPalette({ language, theme, toggleTheme, toggleLanguage }) {
       { id: "nav-growth", title: zh ? "跳转 · 成长地图" : "Go to · Growth Map", subtitle: "#growth-map", group: navGroup, keywords: ["growth", "timeline", "成长", "时间线"], run: scrollTo("growth-map") },
       { id: "nav-funzone", title: zh ? "跳转 · Fun Zone" : "Go to · Fun Zone", subtitle: "#fun-zone", group: navGroup, keywords: ["fun", "zone", "玩乐"], run: scrollTo("fun-zone") },
       { id: "nav-contact", title: zh ? "跳转 · 联系" : "Go to · Contact", subtitle: "#contact", group: navGroup, keywords: ["contact", "联系"], run: scrollTo("contact") },
+
+      { id: "fun-passport", title: zh ? "Fun · 成就护照" : "Fun · Achievement Passport", group: funGroup, keywords: ["passport", "achievement", "badge", "成就", "护照"], run: scrollTo("mod-passport") },
+      { id: "fun-quest-map", title: zh ? "Fun · 学习路线图" : "Fun · Learning Quest Map", group: funGroup, keywords: ["quest", "map", "learning", "roadmap", "学习", "路线"], run: scrollTo("mod-quest-map") },
+      { id: "fun-case-files", title: zh ? "Fun · 项目档案" : "Fun · Project Case Files", group: funGroup, keywords: ["case", "project", "portfolio", "档案", "项目"], run: scrollTo("mod-case-files") },
+      { id: "fun-arena", title: zh ? "Fun · 算法竞技场" : "Fun · Algorithm Arena", group: funGroup, keywords: ["arena", "algorithm", "challenge", "算法", "竞技场"], run: scrollTo("mod-arena") },
+      { id: "fun-debug-lab", title: zh ? "Fun · 调试实验室" : "Fun · Debug Case Lab", group: funGroup, keywords: ["debug", "bug", "lab", "调试"], run: scrollTo("mod-debug-lab") },
 
       { id: "fun-algorithm", title: zh ? "Fun · 算法进度" : "Fun · Algorithm Tracker", group: funGroup, keywords: ["algorithm", "leetcode", "acwing", "算法"], run: scrollTo("mod-algorithm") },
       { id: "fun-pathfinder", title: zh ? "Fun · 算法可视化" : "Fun · Algorithm Visualizer", group: funGroup, keywords: ["path", "bfs", "dfs", "dijkstra", "astar", "算法可视化", "寻路"], run: scrollTo("mod-pathfinder") },
@@ -118,6 +125,7 @@ function CommandPalette({ language, theme, toggleTheme, toggleLanguage }) {
 
   useEffect(() => {
     if (open) {
+      unlockAchievement("open-command-palette");
       setQuery("");
       setActive(0);
     }
