@@ -47,6 +47,11 @@ The site is designed for a computer science student who focuses on **full-stack 
 ### Fun Zone Modules
 
 - **Algorithm Tracker**: displays algorithm-learning progress and topic completion.
+- **Achievement Passport**: local achievement and progress hub powered by `localStorage`.
+- **Learning Quest Map**: interactive roadmap for Web, algorithms, engineering, and open-source study.
+- **Project Case Files**: project review cards with context, problem, solution, lessons, and next steps.
+- **Algorithm Arena**: deterministic pathfinding challenges with score and search metrics.
+- **Debug Case Lab**: small debugging cases with code snippets, choices, fixes, and explanations.
 - **Algorithm Visualizer**: interactive pathfinding visualization for `BFS`, `DFS`, `Dijkstra`, and `A*`.
 - **Skill Radar**: visual overview of technical skill areas.
 - **Daily Quote**: rotating programming and learning quotes.
@@ -263,6 +268,11 @@ my-portfolio/
 ### Fun Zone 模块
 
 - **算法进度**：展示算法学习进度和题型完成情况。
+- **成就护照**：基于 `localStorage` 的本地成就与进度中心。
+- **学习任务地图**：围绕 Web、算法、工程实践和开源观察的互动路线图。
+- **项目档案**：用背景、问题、方案、收获和下一步展示项目复盘。
+- **算法竞技场**：带得分和搜索指标的稳定寻路挑战。
+- **调试案例实验室**：包含代码片段、选择题、修复方案和解释的小型调试案例。
 - **算法可视化**：交互式寻路可视化，支持 `BFS`、`DFS`、`Dijkstra` 和 `A*`。
 - **技能雷达**：可视化展示技术能力方向。
 - **每日语录**：轮换展示编程与学习相关语录。
