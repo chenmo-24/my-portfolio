@@ -5,6 +5,7 @@ dist/
 # local tooling and editor state
 .claude/
 .superpowers/
+.worktrees/
 .vscode/
 .idea/
 
