@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Eraser, Flag, Map as MapIcon, MousePointer2, Play, RotateCcw, Route, Sparkles } from "lucide-react";
+import { unlockAchievement } from "../utils/progressStore";
 
 const ROWS = 10;
 const COLS = 16;
@@ -341,6 +342,7 @@ function AlgorithmVisualizer({ language }) {
 
   const run = () => {
     stopTimer();
+    unlockAchievement("run-pathfinder");
     setRunning(false);
     setVisitedCells(new Set());
     setPathCells(new Set());

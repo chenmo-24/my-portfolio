@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Play, Pause, SkipForward, Shuffle, Trash2, Sparkles } from "lucide-react";
+import { unlockAchievement } from "../utils/progressStore";
 
 const COLS = 36;
 const ROWS = 20;
@@ -269,7 +270,12 @@ function GameOfLife({ language }) {
           <div className="mt-4 flex flex-wrap gap-2">
             <button
               className="primary-button px-4 py-2 text-xs sm:text-sm"
-              onClick={() => setRunning((v) => !v)}
+              onClick={() => {
+                setRunning((value) => {
+                  if (!value) unlockAchievement("play-life");
+                  return !value;
+                });
+              }}
               type="button"
             >
               {running ? <Pause size={16} /> : <Play size={16} />}

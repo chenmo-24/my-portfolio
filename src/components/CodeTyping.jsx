@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Keyboard, RotateCcw, Timer, Percent, Gauge } from "lucide-react";
+import { unlockAchievement } from "../utils/progressStore";
 
 function CodeTyping({ language, snippets }) {
   const [snippetId, setSnippetId] = useState(snippets[0].id);
@@ -55,6 +56,7 @@ function CodeTyping({ language, snippets }) {
     }
     if (value.length === target.length) {
       setEndTs(Date.now());
+      unlockAchievement("complete-typing");
     }
     setInput(value);
   };
@@ -67,7 +69,10 @@ function CodeTyping({ language, snippets }) {
       const next = input.slice(0, selectionStart) + "  " + input.slice(selectionEnd);
       if (next.length <= target.length) {
         if (!startTs) setStartTs(Date.now());
-        if (next.length === target.length) setEndTs(Date.now());
+        if (next.length === target.length) {
+          setEndTs(Date.now());
+          unlockAchievement("complete-typing");
+        }
         setInput(next);
         requestAnimationFrame(() => {
           el.selectionStart = el.selectionEnd = selectionStart + 2;

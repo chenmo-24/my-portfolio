@@ -1,5 +1,6 @@
 import { Play, RotateCcw, ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { unlockAchievement } from "../utils/progressStore";
 
 const GRID = 20;
 const SPEED = 150;
@@ -120,6 +121,7 @@ function SnakeGame({ language }) {
     g.status = "running";
     game.current = g;
     pending.current = null;
+    unlockAchievement("play-snake");
     rerender();
     timer.current = setInterval(step, SPEED);
   }, [stop, step, rerender]);

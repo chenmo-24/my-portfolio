@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { RotateCcw, Trophy } from "lucide-react";
+import { unlockAchievement } from "../utils/progressStore";
 
 const SIZE = 4;
 const WIN_VALUE = 2048;
@@ -155,6 +156,7 @@ function Game2048({ language }) {
     setGrid((current) => {
       const { grid: next, changed, scored } = move(current, direction);
       if (!changed) return current;
+      unlockAchievement("play-2048");
 
       const withTile = addRandomTile(next);
       const top = highestTile(withTile);

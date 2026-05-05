@@ -1,5 +1,6 @@
 import { CheckCheck, Flame, CalendarDays } from "lucide-react";
 import { useEffect, useState } from "react";
+import { unlockAchievement } from "../utils/progressStore";
 
 const WEEK_DAYS = {
   zh: ["一", "二", "三", "四", "五", "六", "日"],
@@ -126,6 +127,7 @@ function CheckinCalendar({ language }) {
       } else {
         nextMap[key] = true;
         window.localStorage.setItem(key, "true");
+        unlockAchievement("add-checkin");
       }
 
       return nextMap;

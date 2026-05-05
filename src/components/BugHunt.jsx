@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Bug, CheckCircle2, Lightbulb, RotateCcw, XCircle } from "lucide-react";
+import { unlockAchievement } from "../utils/progressStore";
 
 const CHALLENGES = [
   {
@@ -81,6 +82,7 @@ function BugHunt({ language }) {
     setSelectedAnswers((current) => ({ ...current, [challenge.id]: lineNumber }));
     if (lineNumber === challenge.buggyLine) {
       setScore((value) => value + 1);
+      unlockAchievement("solve-bug-hunt");
     }
   };
 

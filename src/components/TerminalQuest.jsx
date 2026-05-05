@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CornerDownLeft, KeyRound, Lock, TerminalSquare, Trophy } from "lucide-react";
+import { unlockAchievement } from "../utils/progressStore";
 
 const FILE_SYSTEM = {
   "/": {
@@ -174,6 +175,7 @@ function TerminalQuest({ language }) {
       if (args[1] === "ship-it") {
         window.localStorage.setItem("terminal-quest-unlocked", "true");
         setUnlocked(true);
+        unlockAchievement("complete-terminal-quest");
         output.push(zh ? "解锁成功：你找到了隐藏徽章。" : "Unlocked: you found the hidden badge.");
       } else {
         output.push(zh ? "口令错误。" : "Wrong token.");

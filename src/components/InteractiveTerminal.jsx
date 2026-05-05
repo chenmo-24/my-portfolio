@@ -3,6 +3,7 @@ import { TerminalSquare, CornerDownLeft } from "lucide-react";
 import { personalInfo } from "../data/personalInfo";
 import projectsData from "../data/projects";
 import skillRadar from "../data/skills";
+import { unlockAchievement } from "../utils/progressStore";
 
 const BANNER = {
   zh: [
@@ -67,6 +68,7 @@ function InteractiveTerminal({ language }) {
 
     setCmdHistory((prev) => [cmd, ...prev].slice(0, 40));
     setHistoryIndex(-1);
+    unlockAchievement("run-terminal-command");
 
     const [name, ...args] = cmd.split(/\s+/);
     const outputs = [];

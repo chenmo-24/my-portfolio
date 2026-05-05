@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Braces, ClipboardCheck, Compass, RotateCcw, Share2, TerminalSquare } from "lucide-react";
+import { unlockAchievement } from "../utils/progressStore";
 
 const QUESTIONS = [
   {
@@ -92,6 +93,7 @@ function DeveloperQuiz({ language }) {
       ? `我的开发者人格：${result.title.zh}。${result.desc.zh}`
       : `My developer profile: ${result.title.en}. ${result.desc.en}`;
     navigator.clipboard?.writeText(text).catch(() => {});
+    unlockAchievement("copy-quiz-result");
   };
 
   return (
