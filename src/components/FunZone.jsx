@@ -4,6 +4,7 @@ import AchievementPassport from "./AchievementPassport";
 import LearningQuestMap from "./LearningQuestMap";
 import ProjectCaseFiles from "./ProjectCaseFiles";
 import AlgorithmArena from "./AlgorithmArena";
+import DebugCaseLab from "./DebugCaseLab";
 import DailyQuote from "./DailyQuote";
 import CheckinCalendar from "./CheckinCalendar";
 import SnakeGame from "./SnakeGame";
@@ -35,6 +36,7 @@ function FunZone({ language, quotes }) {
     { id: "mod-quest-map", delay: "0.04s", node: <LearningQuestMap language={language} /> },
     { id: "mod-case-files", delay: "0.045s", node: <ProjectCaseFiles language={language} /> },
     { id: "mod-arena", delay: "0.048s", node: <AlgorithmArena language={language} /> },
+    { id: "mod-debug-lab", delay: "0.049s", node: <DebugCaseLab language={language} /> },
     { id: "mod-algorithm", delay: "0.05s", node: <AlgorithmTracker language={language} progress={algorithmProgress} /> },
     { id: "mod-pathfinder", delay: "0.07s", node: <AlgorithmVisualizer language={language} /> },
     { id: "mod-radar", delay: "0.09s", node: <SkillRadar language={language} data={skillRadarData} /> },
